@@ -3,7 +3,7 @@
 - Elastic Load Balancing (ELB)
 - [ELB 실습](#elb-practice)
 
-## 1. 로드 밸런싱이란?
+## 1. 로드 밸런싱이란22?
 
 - “In computing, load balancing improves the distribution of workloads across multiple computing resources, such as computers, a computer cluster, network links, central processing units, or disk drives…” (https://en.wikipedia.org/wiki/Load_balancing_(computing))
 
