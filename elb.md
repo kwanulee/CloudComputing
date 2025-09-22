@@ -130,9 +130,8 @@ HTTP 헤더나 URL 기반의 복잡한 라우팅 기능은 제공되지 않지�
 ### 3.1 [Application Load Balancer 시작하기](https://docs.aws.amazon.com/ko_kr/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html)
 
 
-### 3.2 경로 기반 라우팅 실습22
+### 3.2 경로 기반 라우팅 실습
 - 실습 시나리오
-	
 	- URL 경로를 기반으로 라우팅하는 규칙을 리스너에 추가
 	![](figures/path-based-routing.png)
 
@@ -141,22 +140,22 @@ HTTP 헤더나 URL 기반의 복잡한 라우팅 기능은 제공되지 않지�
 	2. [**대상 그룹 생성(Create target group)**] 클릭
 		- [**대상 그룹 이름(Target group name)**] 에서 대상 그룹 이름 지정 (예, *my-target1*)
 		- 나머지 항목(프로토콜, 포트, IP 주소 유형, VPC, 상태 검사 설정(프로토콜, 경로))은 기본값 유지
-		- [**다음**] 클릭
+		- **다음** 클릭
 	5. 하나이상의 인스턴스(webserver1, webserver2)를 선택하고, [**아래에 보류 중인 것으로 포함**] 클릭 후, [**대상 그룹 생성**] 클릭
 	
 - **단계2: 두번째 대상그룹 생성**
 	1. [**대상 그룹 생성(Create target group)**] 클릭
 		- [**대상 그룹 이름(Target group name)**] 에서 대상 그룹 이름 지정 (예, *my-target2*)
 		- 나머지 항목(프로토콜, 포트, IP 주소 유형, VPC, 상태 검사 설정(프로토콜, 경로))은 기본값 유지
-		- [**다음**] 클릭
+		- **다음** 클릭
 	5. 하나이상의 인스턴스(webserver3)를 선택하고, [**아래에 보류 중인 것으로 포함**] 클릭 후, [**대상 그룹 생성**] 클릭
 	
-- **단계3:로드 밸런서 타입 선택1**
+- **단계3:로드 밸런서 타입 선택**
 	1. 왼쪽 탐색 창 매뉴의 [**LOAD BALANCING**]에서 [**로드밸런서(Load Balancers)**]를 선택
     2. [**로드 밸런서 생성(Create Load Balancer)**] 클릭
 	3. **Application Load Balancer**의 **생성**를 클릭
 
-- **단계5: 로드 밸런서 구성2**
+- **단계4: 로드 밸런서 구성**
 	1. **이름** : 이름 입력 (해당 리전에서 고유한 이름) 예, path-based-alb
 	2. **방식**: 기본값 유지 (*인터넷 경계*)
 	3. **로드 밸런서 IP 주소 유형**: 기본값 유지 (*ipv4*)
