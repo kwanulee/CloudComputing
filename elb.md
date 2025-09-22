@@ -3,7 +3,7 @@
 - Elastic Load Balancing (ELB)
 - [ELB 실습](#elb-practice)
 
-## 1. 로드 밸런싱이란22?
+## 1. 로드 밸런싱이란?
 
 - “In computing, load balancing improves the distribution of workloads across multiple computing resources, such as computers, a computer cluster, network links, central processing units, or disk drives…” (https://en.wikipedia.org/wiki/Load_balancing_(computing))
 
@@ -130,7 +130,7 @@ HTTP 헤더나 URL 기반의 복잡한 라우팅 기능은 제공되지 않지�
 ### 3.1 [Application Load Balancer 시작하기](https://docs.aws.amazon.com/ko_kr/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html)
 
 
-### 3.2 경로 기반 라우팅 실습
+### 3.2 경로 기반 라우팅 실습22
 - 실습 시나리오
 	
 	- URL 경로를 기반으로 라우팅하는 규칙을 리스너에 추가
