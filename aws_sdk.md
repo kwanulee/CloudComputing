@@ -75,8 +75,8 @@ AWS Toolkit for IntelliJ IDEA는 Amazon Web Services에서 Java 및 Python 애�
 7. 적절한 사용 사례(예, *로컬 코드*)를 선택하고, 맨 아래 확인 체크박스를 체크한 후에 [**다음**] 클릭
 8. 설명 및 태그 설정 후, [**액세스 키 만들기**] 클릭
 9. 다음 화면에서 Access key ID 와 Secret access key 복사 (아래와 같은 형식) 또는 [**.csv 파일 다운로드**] 선택하여 키 파일을 다운로드함
-	- Access key ID: AKIAJP7LTPROQS5KIOHA
-	- Secret access key: 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
+	- Access key ID: XXXXXXXXXXXXXXXXXXXXXX
+	- Secret access key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ### 3.2 IntelliJ IDEA IDE에 AWS Credential 설정
 1. IntelliJ IDEA IDE를 재시작한 후에, **View -> Tool Windows -> AWS Explorer** 메뉴를 통해서 **AWS Explorer** 도구 창을 볼 수 있습니다.
