@@ -83,28 +83,26 @@ AWS Toolkit for IntelliJ IDEA는 Amazon Web Services에서 Java 및 Python 애�
 
     ![](figures/aws-toolkit-explorer-initial.png)
 
-    - [**IAM Credentials**] 선택 후 [**Continue**] 클릭
-    - 아래와 내용을 입력한 후에 [**Continue**] 클릭
-        - [**Profile Name**]: *default* 입력
-        - [**Access Key**]: 앞서 복사한 Access key ID 입력
-        - [**Secrete Key**]: 앞서 복사한 Secret access key 입력   
+    - [**Edit AWS Credential files(s)...**] 선택 후 아래와 내용을 입력후, 화면 상단의 **Save** 클릭
+        - [**aws_access_key_id**]: 앞서 복사한 Access key ID 입력
+        - [**aws_secret_access_key**]: 앞서 복사한 Secret access key 입력   
 
 
 ### 3.3 AWS Toolkit for IntelliJ IDEA를 사용하여 HelloS3 Java 프로젝트 생성 및 실행
 1. IntelliJ IDEA IDE 실행
 2. [**File**]-[**New**]-[**Project**] 선택
 3. 아래와 같이 정보를 입력후, [**Create**] 클릭
-   - Name: *HelloS3* 입력
-   - Location: 프로젝트가 생성될 위치 지정
-   - Language: *Java* 선택
-   - Build system: *Gradle* 선택
-   - JDK: 최신 버전의 JDK 선택
-   - Gradle DSL: *Groovy* 선택
-5. Build.gradle 파일을 열고, dependencies 섹션 내에 다음 의존성을 추가한 후, 동기화 시킴
+    - 프로젝트 형식: "Java" 선택
+    - Name: *HelloS3* 입력
+    - Location: 프로젝트가 생성될 위치 지정
+    - Build system: *Gradle* 선택
+    - JDK: 최신 버전의 JDK 선택
+    - Gradle DSL: *Groovy* 선택
+5. Build.gradle 파일을 열고, dependencies 섹션 내에 다음 의존성을 추가한 후, **동기화** 시킴
 
     ```
     dependencies {
-        implementation(platform("software.amazon.awssdk:bom:2.21.1"))
+        implementation(platform("software.amazon.awssdk:bom:2.34.5"))
         implementation("software.amazon.awssdk:s3")
         ...
    }
