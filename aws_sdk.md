@@ -84,8 +84,8 @@ IntelliJ IDEA IDE를 재시작한 후에, **View -> Tool Windows -> AWS Explorer
 ![](figures/aws-toolkit-explorer-initial.png)
 
 - [**Edit AWS Credential files(s)...**] 선택 후 아래와 내용을 입력후, 화면 상단의 **Save** 클릭
-    - [**aws_access_key_id**]: 앞서 복사한 Access key ID 입력
-    - [**aws_secret_access_key**]: 앞서 복사한 Secret access key 입력   
+    - **aws_access_key_id**: 앞서 복사한 Access key ID 입력
+    - **aws_secret_access_key**: 앞서 복사한 Secret access key 입력   
 
 
 ### 3.3 AWS Toolkit for IntelliJ IDEA를 사용하여 HelloS3 Java 프로젝트 생성 및 실행
