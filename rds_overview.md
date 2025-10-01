@@ -56,8 +56,6 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 
 - [DB 인스턴스](#1.3.1)
 - [보안그룹](#1.3.2)
-- [DB 파라미터 그룹](#1.3.3)
-- [DB 옵션 그룹](#1.3.4)
 
 <a name="1.3.1"></a>
 
@@ -68,9 +66,9 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
   - 기존 도구 및 애플리케이션 (예, 표준 SQL 클라이언트 애플리케이션)을 통해 DB 인스턴스에 접근 가능
   - AWS 명령행 인터페이스 (CLI), Amazon RDS API, AWS Management Console을 사용해 DB 인스턴스를 만들고 수정할 수 있음.
 - 하나의 DB 인스턴스는 선택한 **데이터베이스 엔진** (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, Amazon Aurora)을 실행하며, 이 인스턴스 위에 여러 데이터베이스를 생성할 수 있습니다.
-- DB 인스턴스 클래스
+- **DB 인스턴스 클래스**
   - DB 인스턴스의 CPU 및 메모리 용량 결정
-- DB 인스턴스의 스토리지
+- **DB 인스턴스의 스토리지**
   - 5GB에서 6TB까지 용량 선택 가능
   - 마그네틱, 범용(SSD) 및 프로비저닝된 IOPS(SSD) 등 세 가지 유형
 - Amazon의 Virtual Private Cloud(VPC) 서비스를 사용해 가상 사설 클라우드에서 DB 인스턴스를 실행 가능
@@ -80,34 +78,13 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 #### 1.3.2 보안그룹
 
 - DB 인스턴스에 대한 액세스를 제어
-  
   - 사용자가 지정한 IP 주소 범위 또는 Amazon EC2 인스턴스에서 액세스할 수 있도록 허용하는 방법으로 제어
-- Amazon RDS는 **DB 보안 그룹**, **VPC 보안 그룹** 및 **EC2 보안 그룹**을 사용
-  
-  - **DB 보안 그룹**은 VPC 외부의 DB 인스턴스에 대한 액세스를 제어하고,
+- Amazon RDS는 **VPC 보안 그룹** 및 **EC2 보안 그룹**을 사용
   - **VPC 보안 그룹**은 VPC 내부의 DB 인스턴스에 대한 액세스를 제어하고,
   - **EC2 보안 그룹**은 EC2 인스턴스에 대한 액세스를 제어하며, DB 인스턴스와 함께 사용
   
   ![](figures\rds-security.png?msec=1728522773172)
   
-
-<a name="1.3.3"></a>
-
-#### 1.3.3 DB 파라미터 그룹
-
-- DB 파라미터 그룹을 사용해 DB 엔진의 구성을 관리
-- 인스턴스 유형이 같은 하나 이상의 DB 인스턴스에 적용할 수 있는 엔진 구성 값을 포함
-- DB 인스턴스를 만들 때 DB 파라미터 그룹을 지정하지 않으면 Amazon RDS가 기본 DB 파라미터 그룹을 적용
-  - 기본 그룹에는 특정 데이터베이스 엔진 및 DB 인스턴스의 인스턴스 클래스에 대한 기본값이 포함
-
-<a name="1.3.4"></a>
-
-#### 1.3.4 **DB 옵션 그룹**
-
-- 일부 DB 엔진은 데이터베이스를 간편하게 관리하고 데이터를 적극 활용할 수 있는 추가 기능을 제공
-  - 예를 들어, Oracle이나 SQL Server 같은 엔진에서 특정 확장 기능(예: Oracle Enterprise Manager)을 활성화할 수 있습니다.
-- Amazon RDS는 DB 옵션 그룹을 사용하여 이러한 기능을 활성화 하고 구성
-
 
 ----
 <a name="practice"></a>
