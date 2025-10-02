@@ -193,11 +193,11 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 7. [템플릿]에서 *프리티어* 선택
 8. [설정]에서 다른 설정은 그대로 두고, 아래 세 부분에 대해서만 수정
   - DB 인스턴스 식별자 : 선택한 리전의 계정에 대해 고유한 DB 인스턴스의 이름을 입력
-  		- 예, *tutorial-db-instance*	
+    - 예, *tutorial-db-instance*	
   - 마스터 사용자 이름 : 1-16자의 영숫자 문자를 사용해 DB 인스턴스에 로그온하기 위해 마스터 사용자 이름으로 사용할 이름을 입력
-  		- 예, *tutorial_user*
+    - 예, *tutorial_user*
   - [마스터 암호] 및 [마스터 암호 확인]: 마스터 사용자 암호로 인쇄 가능한 ASCII 문자(/, " 및 @ 제외) 8-41자를 포함하는 암호를 입력
-  		- 예, *master_password*
+    - 예, *master_password*
 9. [인스턴스 구성]에서 기본 설정 유지 (버스터블 클래스(t클래스 포함 - db.t4g.micro))
 10. [스토리지]에서 기본 설정 유지
   - 스토리지 유형 : *범용(SSD)*을 선택
@@ -206,7 +206,7 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
   - [컴퓨팅 리소스]에서 *EC2 컴퓨팅 리소스에 연결* 선택
   - [EC2 인스턴스]에서 연결할 EC2 인스턴스를 선택
   - [VPC 보안 그룹]에서 이 DB 인스턴스에 사용할 VPC 보안 그룹을 선택
-  		- 기존 보안 그룹(예: tutorial-db-security-group) 선택
+    - 기존 보안 그룹(예: tutorial-db-security-group) 선택
   - 나머지 설정은 그대로 유지
 12. [추가 구성]에서 
   - 데이터베이스 이름 : 기본 데이터베이스의 이름을 1~64자의 영숫자 문자로 입력 (*sample* 입력)
@@ -222,20 +222,16 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 <a name="2.2.5"></a>
 #### 2.2.5 DB인스턴스에 PHP 웹 애플리케이션 연결
 1. EC2 인스턴스에  연결하고, 디렉터리를 **/var/www**로 변경하고, inc라는 새로운 하위 디렉터리를 생성합니다.
-
   ```
   [ec2-user ~]$ cd /var/www
   [ec2-user ~]$ mkdir inc
   [ec2-user ~]$ cd inc
   ```
-
 2. dbinfo.inc라는 inc 디렉터리에서 새 파일을 생성한 다음 nano 또는 선택한 편집기를 호출하여 다음 콘덴츠로 파일을 편집하고 저장하고 닫는다.
-
   ```
   [ec2-user ~]$ >dbinfo.inc
   [ec2-user ~]$ nano dbinfo.inc
   ```
-
   ```
   <?php
   	define('DB_SERVER', '생성된 DB 인스턴스의 엔드포인트로 대체');
@@ -244,18 +240,14 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
   	define('DB_DATABASE', 'sample');
   ?>
   ```
-
 3. 디렉터리를 /var/www/html로 변경하고, SamplePage.php라는 html 디렉터리에서 새 파일을 생성한 다음 nano 또는 선택한 편집기를 호출하여 파일을 편집합니다
-
   ```
   [ec2-user ~]$ cd /var/www/html
   [ec2-user ~]$ >SamplePage.php
   [ec2-user ~]$ nano SamplePage.php
   ```
-
 4. 다음 링크의 콘덴츠를 SamplePage.php 파일에 추가
   - https://github.com/kwanulee/AWSExample/blob/master/RDS-PHP/SamplePage.php
-
 5. SamplePage.php 파일을 저장하고 닫습니다
 6. 웹 브라우저를 열고 http://*EC2_instance_endpoint*/SamplePage.php 입력하여 결과를 확인   
   - 예: http://ec2-52-79-51-167.ap-northeast-2.compute.amazonaws.com/SamplePage.php 를 검색하여 웹 서버에서 RDS MariaDB DB 인스턴스에 제대로 연결되는지 확인
