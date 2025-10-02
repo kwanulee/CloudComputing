@@ -284,43 +284,37 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 - 표준 SQL 클라이언트 애플리케이션을 사용해 DB 인스턴스에 있는 데이터베이스에 연결할 수 있습니다.
 - mysql 명령줄 도구를 사용하여 DB 인스턴스의 데이터베이스에 연결하는 방법
   1. MySQL이 설치된 EC2 인스턴스로 접속 혹은  MySQL 설치
-   
-   		```
-   		[ec2-user ~]$ sudo yum install -y mariadb105
-   		```
-  
+    ```
+    [ec2-user ~]$ sudo yum install -y mariadb105
+    ```
   2. 터미널에서 다음 입력
-  
-    	```
-    	[ec2-user ~]$ mysql -h <endpoint> -P 3306 -u <mymasteruser> -p
-    	```
+    ```
+    [ec2-user ~]$ mysql -h <endpoint> -P 3306 -u <mymasteruser> -p
+    ```
 
-    	- \<endpoint\>를  DB 인스턴스의 DNS 이름으로 대체 (port 번호 제외)
-    	- \<mymasteruser\> 를 마스터 사용자 이름으로 대체
+    - \<endpoint\>를  DB 인스턴스의 DNS 이름으로 대체 (port 번호 제외)
+    - \<mymasteruser\> 를 마스터 사용자 이름으로 대체
 
   3. 암호를 입력하라는 요청을 받으면 사용한 마스터 암호 입력
-
-    	```
-    	[ec2-user~]$ mysql -h tutorial-db-instance.cwpfd82zeivm.ap-northeast-2.rds.amazonaws.com -P 3306 -u tutorial_user -p
-    	Enter password:
-    	```
+    ```
+    [ec2-user~]$ mysql -h tutorial-db-instance.cwpfd82zeivm.ap-northeast-2.rds.amazonaws.com -P 3306 -u tutorial_user -p
+    Enter password:
+    ```
 
   4. 데이터베이스 확인
+    ```
+    mysql> show databases;
+    ```
 
-    	```
-    	mysql> show databases;
-    	```
   5. 데이터베이스 사용 선언
-
-    	```
-    	mysql> use sample;
-    	```
+    ```
+    mysql> use sample;
+    ```
 
   6. Select SQL문 사용
-
-    	```
-    	mysql>select * from Employees;
-    	```
+    ```
+    mysql>select * from Employees;
+    ```
 
 ---
 <a name="2.2.7"></a>
