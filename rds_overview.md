@@ -288,11 +288,11 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
     [ec2-user ~]$ sudo yum install -y mariadb105
     ```
   2. 터미널에서 다음 입력
+    - \<endpoint\>를  DB 인스턴스의 DNS 이름으로 대체 (port 번호 제외)
+    - \<mymasteruser\> 를 마스터 사용자 이름으로 대체
     ```
     [ec2-user ~]$ mysql -h <endpoint> -P 3306 -u <mymasteruser> -p
     ```
-    - \<endpoint\>를  DB 인스턴스의 DNS 이름으로 대체 (port 번호 제외)
-    - \<mymasteruser\> 를 마스터 사용자 이름으로 대체
   3. 암호를 입력하라는 요청을 받으면 사용한 마스터 암호 입력
     ```
     [ec2-user~]$ mysql -h tutorial-db-instance.cwpfd82zeivm.ap-northeast-2.rds.amazonaws.com -P 3306 -u tutorial_user -p
