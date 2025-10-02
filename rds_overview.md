@@ -54,12 +54,12 @@ Amazon RDS(Amazon Relational Database Service)는 **AWS(Amazon Web Services)**�
 
 Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스턴스의 생성, 관리, 확장, 백업, 복구 등의 다양한 작업을 수행할 수 있도록 설계되었습니다. 이를 통해 RDS는 사용자가 손쉽게 데이터베이스를 운영할 수 있는 환경을 제공하며, 각 요소는 서로 긴밀하게 통합되어 RDS의 기능을 최적화합니다. 아래에서 Amazon RDS의 주요 구성 요소들을 자세히 설명하겠습니다.
 
-- [DB 인스턴스](#1.3.1)
-- [보안그룹](#1.3.2)
+- [DB 인스턴스](#1.2.1)
+- [보안그룹](#1.2.2)
 
-<a name="1.3.1"></a>
+<a name="1.2.1"></a>
 
-#### 1.3.1 DB 인스턴스
+#### 1.2.1 DB 인스턴스
 
 - **Amazon RDS의 기본 구성요소**로서, 클라우드에 있는 격리된 데이터베이스 환경
   - 사용자가 만든 여러 데이터베이스 포함
@@ -73,9 +73,9 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
   - 마그네틱, 범용(SSD) 및 프로비저닝된 IOPS(SSD) 등 세 가지 유형
 - Amazon의 Virtual Private Cloud(VPC) 서비스를 사용해 가상 사설 클라우드에서 DB 인스턴스를 실행 가능
 
-<a name="1.3.2"></a>
+<a name="1.2.2"></a>
 
-#### 1.3.2 보안그룹
+#### 1.2.2 보안그룹
 
 - DB 인스턴스에 대한 액세스를 제어
   - 사용자가 지정한 IP 주소 범위 또는 Amazon EC2 인스턴스에서 액세스할 수 있도록 허용하는 방법으로 제어
@@ -96,11 +96,11 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 
 1. [EC2 인스턴스 생성](#2.2.1)
 2. [PHP와 함께 Apache 웹서버 설치](#2.2.2)
-3. [VPC 보안 그룹 생성](#0.3)
-1. [MySQL DB인스턴스 생성](#1)
-2. [DB 인스턴스에 PHP 웹 애플리케이션 연결](#2)
-3. [DB인스턴스의 데이터베이스에 연결](#3)
-4. [DB 인스턴스 삭제](#4)
+3. [VPC 보안 그룹 생성](#2.2.3)
+1. [MySQL DB인스턴스 생성](#2.2.4)
+2. [DB 인스턴스에 PHP 웹 애플리케이션 연결](#2.2.5)
+3. [DB인스턴스의 데이터베이스에 연결](#2.2.6)
+4. [DB 인스턴스 삭제](#2.2.7)
 
 <a name="2.2.1"></a>
 #### 2.2.1 EC2 인스턴스 생성
@@ -118,64 +118,45 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 
 1. EC2 인스턴스에 연결하고 PHP가 포함된 Apache 웹 서버를 설치한다.
   - 최신 버그 수정 및 보안 업데이트를 수행
-
     ```
     [ec2-user ~]$ sudo yum update
     ```
-
   - 업데이트 완료 후 yum install 명령을 사용하여 PHP 소프트웨어 패키지가 포함된 Apache 웹 서버를 설치
-
     ```
     [ec2-user ~]$ sudo yum install -y httpd php php-mysqlnd     
     ```
-
   - 웹 서버를 시작
-
     ```
     [ec2-user ~]$ sudo service httpd start
     ```
-
   - chkconfig 명령을 사용하여 웹 서버가 시스템 부팅 때마다 시작되도록 구성
-
     ```
     [ec2-user ~]$ sudo chkconfig httpd on
     ```
-
 2. Apache 웹 서버에 대한 파일 권한을 설정한다.
   - 사용자(이 경우는 ec2-user)를 apache 그룹에 추가
-
     ```
     [ec2-user ~]$ sudo usermod -a -G apache ec2-user
     ```
-
   - 로그아웃
-
     ```
     [ec2-user ~]$ exit
     ```
-
   - apache 그룹의 멤버십을 확인하려면 인스턴스에 다시 연결한 후 다음 명령을 실행.
-
     ```
     [ec2-user ~]$ groups
     ec2-user adm wheel apache systemd-journal
     ```
-
   - /var/www 및 그 콘텐츠의 그룹 소유권을 apache 그룹으로 변경
-
     ```
     [ec2-user ~]$ sudo chown -R ec2-user:apache /var/www
     ```
-
   - 그룹 쓰기 권한을 추가하여 나중에 하위 디렉터리에 대한 그룹 ID를 설정하려면 /var/www와 그 하위 디렉터리의 **디렉터리 권한을 변경**
-
     ```
     [ec2-user ~]$ sudo chmod 2775 /var/www
     [ec2-user ~]$ find /var/www -type d -exec sudo chmod 2775 {} \;
     ```
-
   - 그룹 쓰기 권한을 추가하려면 /var/www 및 그 하위 디렉터리의 **파일 권한을 반복하여 변경**
-
     ```
     [ec2-user ~]$ find /var/www -type f -exec sudo chmod 0664 {} \;
     ```
