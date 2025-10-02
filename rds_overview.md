@@ -108,7 +108,7 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 2. [EC2 대시보드]를 선택한 다음, [인스턴스 시작]를 선택합니다
 3. [이름 및 태그] 섹션에서 이름(예, *tutorial-webserver*)을 입력합니다.
 4. [애플리케이션 및 OS 이미지] 섹션에서 *Amazon Linux 2023 AMI*를 선택합니다.
-5. [인스턴스 유형] 섹션에서 *t2.micro* 인스턴스 유형을 선택합니다.
+5. [인스턴스 유형] 섹션에서 *t3.micro* 인스턴스 유형을 선택합니다.
 6. [키페어(로그인)] 섹션에서 기존 키페어를 선택하거나 새 키페어를 생성합니다.
 7. [네트워크 설정] SSH와 HTTP의 인바운드 트래픽을 허용하는 보안그룹을 생성하거나 기존 보안 그룹 중에서 선택합니다.
 8. 다른 부분은 기본 설정 그대로 유지한 채, [인스턴스 시작]을 선택합니다.
@@ -120,7 +120,7 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
   - 최신 버그 수정 및 보안 업데이트를 수행
 
     ```
-    [ec2-user ~]$ sudo yum update –y
+    [ec2-user ~]$ sudo yum update
     ```
 
   - 업데이트 완료 후 yum install 명령을 사용하여 PHP 소프트웨어 패키지가 포함된 Apache 웹 서버를 설치
@@ -220,7 +220,7 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 9. [인스턴스 구성]에서 기본 설정 유지 (버스터블 클래스(t클래스 포함 - db.t4g.micro))
 10. [스토리지]에서 기본 설정 유지
   - 스토리지 유형 : *범용(SSD)*을 선택
-  - 할당된 스토리지 : 20GB 할당
+  - 할당된 스토리지 : 400GB 할당
 11. [연결]에서 이전에 생성한 EC2 인스턴스와의 연결을 설정합니다.  
   - [컴퓨팅 리소스]에서 *EC2 컴퓨팅 리소스에 연결* 선택
   - [EC2 인스턴스]에서 연결할 EC2 인스턴스를 선택
@@ -283,13 +283,13 @@ Amazon RDS(Amazon Relational Database Service)의 구성 요소들은 RDS 인스
 #### 2.2.6 MySQL DB인스턴스의 데이터베이스에 연결
 - 표준 SQL 클라이언트 애플리케이션을 사용해 DB 인스턴스에 있는 데이터베이스에 연결할 수 있습니다.
 - mysql 명령줄 도구를 사용하여 DB 인스턴스의 데이터베이스에 연결하는 방법
-  	1. MySQL이 설치된 EC2 인스턴스로 접속 혹은  MySQL 설치
+  1. MySQL이 설치된 EC2 인스턴스로 접속 혹은  MySQL 설치
    
    		```
    		[ec2-user ~]$ sudo yum install -y mariadb105
    		```
   
-  	2. 터미널에서 다음 입력
+  2. 터미널에서 다음 입력
   
     	```
     	[ec2-user ~]$ mysql -h <endpoint> -P 3306 -u <mymasteruser> -p
