@@ -58,25 +58,31 @@
 	- **AWS > AWS Serverless Application** 선택 후, **Next** 클릭
 2. 새 프로젝트 설정
 	- **Project Name**: *HelloServerlessApp* 
-	- 나머지는 항목은 기본값으로 유지 혹은 필요에 따라서 수정 가능
+	- [**중요**] **Runtime**과 **SDK**의 Java 버전을 동일하게 유지
+		- 예: Runtime: java8.al2, SDK: corretto-1.8
 	- **Create** 클릭
 3. 로컬에서 실행
 	- [**필수**] Docker 프로세스가 실행된 상태이어야 함 (앞서 설치한 Docker를 실행)
 	-  IntelliJ IDEA IDE의 화면 상단 타이틀 바에서 "[Local] HelloWorldFunction" 옆의 **연두색 실행 버튼 (삼각형)을 클릭**
-	-  [**Edit Configuration**] 다이얼로그 화면에서 **Text -- Event Templates --** 부분의 드롭다운 메뉴 중에서 *API Gateway AWS Proxy*를 선택 후, **Run** 클릭
+	-  [**Edit Configuration**] 다이얼로그 화면에서 **Text -- Event Templates --** 부분의 드롭다운 메뉴 중에서 
+		- *API Gateway AWS Proxy*를 선택 후, **Run** 클릭
 	-  콘솔 창에 다음 결과가 맨 마지막 줄에 출력되는 지를 확인
 	
 		```
 		{"statusCode": 200, "headers": {"X-Custom-Header": "application/json", "Content-Type": "application/json"}, "body": "{ \"message\": \"hello world\", \"location\": \"112.169.157.31\" }"}
 		```
 4. AWS에 배포하기	
+	- 왼쪽 AWS Toolkit 창에서 Lambda 함수를 배포할 리전을 선택  
+		<img src="figures/lambda_select_region.png" width="300" >
 	- **HelloServerlessApp** 프로젝트 탐색창에서 **template.yaml**을 찾아서 선택하고, 선택된 상태에서 오른쪽 마우스 클릭하여 **SyncServerless Application (formerly Deploy)** 메뉴를 선택
+		<img src="figures/lambda_deploy.png" width="300" >
 	- [**Confir development stack**] 다이얼로그 화면에서 **Confirm** 선택
 	- [**SyncServerless Application (formerly Deploy)**] 다이얼로그 화면에서  
 		- **[Create Stack]**에 적절한 이름(예, *HelloServerlessApp*)을 입력  
 		- **[S3 Bucket]** 에서 기존 bucket을 선택하거나, [**Create**]를 클릭하여, 코드를 저장할 버킷 이름을 입력한 후 **Create** 클릭
-		- **[CloudFormation Capabilities:]** 에서 **IAM** 체크박스를 선택
-		-**Build function inside a container** 체크박스를 선택한 후, **Sync** 클릭
+		- **[CloudFormation Capabilities:]** 에서 아래 체크박스를 추가로 선택
+			- **IAM** 체크박스를 선택
+		- **Sync** 클릭
 		- [**참고**] 한참 동안 진행이 안되면 현재 스텝을 한번더 수행해 본다.  
 	- 콘솔 창에 다음 결과가 맨 마지막 줄에 출력되는 지를 확인
 
@@ -117,7 +123,7 @@
 	- **구독 중인 endpoint 또는 클라이언트에게 메시지 전달**을 조정 및 관리하는 웹 서비스입니다.
 
 	![](https://cdn.geekwire.com/wp-content/uploads/2016/06/sns-how-works.png)
-	
+
 - [**AWS 실습**] [Amazon SNS 시작하기](https://docs.aws.amazon.com/ko_kr/sns/latest/dg/sns-getting-started.html)
 
 <a name="3.2"></a>
