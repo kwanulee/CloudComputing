@@ -74,7 +74,9 @@
 4. AWS에 배포하기	
 	- 왼쪽 AWS Toolkit 창에서 Lambda 함수를 배포할 리전을 선택  
 		<img src="figures/lambda_select_region.png" width="300" >
+	
 	- **HelloServerlessApp** 프로젝트 탐색창에서 **template.yaml**을 찾아서 선택하고, 선택된 상태에서 오른쪽 마우스 클릭하여 **SyncServerless Application (formerly Deploy)** 메뉴를 선택
+
 		<img src="figures/lambda_deploy.png" width="300" >
 	- [**Confir development stack**] 다이얼로그 화면에서 **Confirm** 선택
 	- [**SyncServerless Application (formerly Deploy)**] 다이얼로그 화면에서  
