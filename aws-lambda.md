@@ -116,7 +116,8 @@
 	- **마이크로서비스, 분산 시스템 및 서버리스 애플리케이션을 쉽게 분리**할 수 있게 해 주는 내구적이고 안전한 고가용성의 완전 관리형 게시/구독 메시징 서비스입니다.
 	- **구독 중인 endpoint 또는 클라이언트에게 메시지 전달**을 조정 및 관리하는 웹 서비스입니다.
 
-
+	![](https://cdn.geekwire.com/wp-content/uploads/2016/06/sns-how-works.png)
+	
 - [**AWS 실습**] [Amazon SNS 시작하기](https://docs.aws.amazon.com/ko_kr/sns/latest/dg/sns-getting-started.html)
 
 <a name="3.2"></a>
