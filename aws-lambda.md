@@ -15,21 +15,21 @@
 	- AWS SAM(Serverless Application Model)이란?
 		- AWS SAM은 AWS 클라우드에서 서버리스 애플리케이션을 정의하고 배포하기 위한 오픈 소스 프레임워크입니다. AWS SAM CLI는 이 프레임워크를 CLI(Command Line Interface)로 실행하고 관리할 수 있는 도구입니다.
 		- 주요 기능
-			1.	로컬 테스트 및 디버깅
+			-	로컬 테스트 및 디버깅
 				- 서버리스 애플리케이션을 로컬 환경에서 AWS Lambda와 API Gateway를 에뮬레이트하여 테스트할 수 있습니다.
 				- 디버깅 도구를 통해 Lambda 함수의 로직을 디버깅 가능합니다.
-			2.	애플리케이션 빌드
+			-	애플리케이션 빌드
 				- SAM CLI는 소스 코드를 빌드하고 배포 가능한 상태로 패키징합니다.
 				- AWS Lambda가 지원하는 여러 언어(Runtime) 환경(예: Python, Node.js, Java 등)을 지원합니다.
-			3.	AWS에 배포
+			-	AWS에 배포
 				- AWS SAM CLI를 통해 CloudFormation 템플릿을 생성하고, 이를 기반으로 애플리케이션을 AWS에 배포합니다.
 				- sam deploy 명령어로 간단하게 서버리스 애플리케이션을 AWS에 배포할 수 있습니다.
-			4.	템플릿 유효성 검사
+			-	템플릿 유효성 검사
 				- AWS SAM 템플릿의 문법 및 구성을 검증합니다.
-			5.	로컬 컨테이너 기반 실행
+			-	로컬 컨테이너 기반 실행
 				- Lambda의 런타임 환경을 Docker 컨테이너를 통해 로컬에서 에뮬레이션합니다.
 				- Lambda 함수가 실제 AWS 환경에서 동작하는 것과 유사하게 실행됩니다.
-			6.	자동화 및 CI/CD 통합
+			-	자동화 및 CI/CD 통합
 				- AWS CodePipeline, Jenkins, GitHub Actions와 같은 CI/CD 도구와 쉽게 통합하여 서버리스 배포를 자동화할 수 있습니다.
 - [Docker 설치](https://docs.docker.com/get-docker/ )
 	- Docker란?
